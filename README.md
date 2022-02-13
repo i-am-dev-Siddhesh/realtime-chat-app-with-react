@@ -1,4 +1,4 @@
-# Realtime caht application by siddhesh
+# Realtime chat application by siddhesh
 
 This project uses following techs.
  - React JS 
