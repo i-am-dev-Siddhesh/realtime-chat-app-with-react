@@ -6,9 +6,9 @@ function App() {
         <ChatEngine
             height="100vh"
             width="100vw"
-            projectID=""
-            userName=""
-            userSecret=""
+            projectID={process.env.REACT_APP_CHAT_ENGINE_PROJECT_ID}
+            userName="siddhesh"
+            userSecret="password"
         />
     );
 }
