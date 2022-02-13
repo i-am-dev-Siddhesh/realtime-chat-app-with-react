@@ -4,6 +4,7 @@ import axios from "axios";
 export const LoginForm = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [error, setError] = useState();
 
     const handleSubmit = async (e) => {
         try {
@@ -23,6 +24,11 @@ export const LoginForm = () => {
         } catch (err) {
             localStorage.setItem("username", "");
             localStorage.setItem("password", "");
+            const errorMessage =
+                err?.response?.data?.message ||
+                err?.message ||
+                "Oops! Something went wrong";
+            setError(errorMessage);
         }
     };
     return (
@@ -52,13 +58,12 @@ export const LoginForm = () => {
                     ></input>
                     <div align="center">
                         <button type="submit" className="button">
-                            Login
+                            <span>Login</span>
                         </button>
                     </div>
+                    <h2 className="error">{error}</h2>
                 </form>
             </div>
         </div>
     );
 };
-
-
